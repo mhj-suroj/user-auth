@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        <h2 style="color: blue">{{ user.first_name }} {{ user.last_name }}</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+    {% endif %}
+
+    <div class="text-bottom">
+        <a href="{% url 'edit_profile' %}"><button type="submit" class="btn btn-secondary">Edit Profile</button></a>
+    </div>
+
+{% endblock %}
